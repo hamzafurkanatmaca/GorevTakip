@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root Type="DevExpress.CodeRush.Foundation.Markers.SolutionBookmarksContainer">
+  <Options Language="Neutral">
+    <Items>
+      <Item Id="{e876039e-b812-47fa-8e79-e4624e4b0cd3}">
+        <Id>1</Id>
+        <File>deneme\deneme.Module\Controllers\GoreviAl.cs</File>
+        <Line>48</Line>
+        <Character>15</Character>
+        <ViewportTop>32</ViewportTop>
+        <ViewportTopMax>48</ViewportTopMax>
+        <TopLine>32</TopLine>
+      </Item>
+    </Items>
+  </Options>
+</Root>

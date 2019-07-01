@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="GorevTakipSistemi">
+  <ActionDesign>
+    <Actions>
+      <Action Id="GorevAl" Caption="Seçili Görevi Al" />
+    </Actions>
+  </ActionDesign>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default" Caption="Görev Takip Sistemi">
+        <Items>
+          <Item Id="@517b84cf-a88b-48ac-8e46-6165c9a376bd" Caption="Görev Oluştur" ViewId="TaskDefinitions_ListView_CreatedUser" IsNewNode="True" />
+          <Item Id="@807863ec-9b27-48e1-8707-683c21957576" Caption="Atanmamış Görevler" ViewId="TaskDefinitions_ListView_AtanmamisGorevler" IsNewNode="True" />
+          <Item Id="@cd5b5c8b-de32-4e5f-92e2-a0713704660e" ViewId="TaskDefinitions_ListView_Görevlerim" Caption="Görevlerim" IsNewNode="True" />
+          <Item Id="Event_ListView" Visible="False" Removed="True" />
+          <Item Id="TaskDefinitions_ListView" Caption="Bütün Görevler" />
+          <Item Id="TaskGroups_ListView" Caption="Görev Grupları" />
+          <Item Id="Users_ListView" Caption="Kullanıcılar" />
+        </Items>
+      </Item>
+      <Item Id="Reports" Visible="True" />
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SchedulerModuleBase" Version="19.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="19.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="TaskDefinitions_DetailView" Caption="Görev Oluştur">
+      <Items>
+        <PropertyEditor Id="CreatedUser" AllowEdit="False" Caption="Oluşturan Kullanıcı" />
+        <PropertyEditor Id="FinishTime" Caption="Bitiş Zamanı" />
+        <PropertyEditor Id="StartTime" Caption="Başlangıç Zamanı" />
+        <PropertyEditor Id="TaskDefinition" Caption="Görev Tanımı" />
+        <PropertyEditor Id="TaskGroups" Caption="Görev Grubu" />
+        <PropertyEditor Id="TaskStatus" AllowEdit="False" Caption="Görev Durumu" />
+        <PropertyEditor Id="WorkingUser" Caption="Çalışan Kullanıcı" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="TaskDefinitions" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="TaskDefinitions_col1" RelativeSize="100" Caption="TaskDefinitions_col1">
+                <LayoutItem Id="TaskDefinition" RelativeSize="11.510791366906474" />
+                <LayoutGroup Id="Autod1bace79-5ac9-449f-a303-141e29b7084d" ShowCaption="False" Caption="Autod1bace79-5ac9-449f-a303-141e29b7084d(6)" Direction="Horizontal" Index="1" RelativeSize="11.870503597122303" IsNewNode="True">
+                  <LayoutItem Id="TaskStatus" ViewItem="TaskStatus" Index="0" RelativeSize="50.786516853932582" IsNewNode="True" />
+                  <LayoutItem Id="CreatedUser" ViewItem="CreatedUser" Index="1" RelativeSize="49.213483146067418" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto9c43b48e-5079-4372-adbe-9057d295a9cc" ShowCaption="False" Caption="Auto9c43b48e-5079-4372-adbe-9057d295a9cc(9)" Index="2" RelativeSize="76.618705035971217" IsNewNode="True">
+                  <LayoutItem Id="StartTime" ViewItem="StartTime" Index="0" RelativeSize="12.67605633802817" IsNewNode="True" />
+                  <LayoutGroup Id="Autob07d1869-21a6-4244-af09-dee07013065a" ShowCaption="False" Caption="Autob07d1869-21a6-4244-af09-dee07013065a(12)" Direction="Vertical" Index="1" RelativeSize="87.323943661971825" IsNewNode="True">
+                    <LayoutItem Id="FinishTime" ViewItem="FinishTime" Index="0" RelativeSize="16.129032258064516" IsNewNode="True" />
+                    <LayoutGroup Id="Auto336a6ebe-4f79-4f7e-a9ad-64005773a7f2" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="83.870967741935488" IsNewNode="True">
+                      <LayoutItem Id="TaskGroups" ViewItem="TaskGroups" Index="0" RelativeSize="50.786516853932582" IsNewNode="True" />
+                      <LayoutItem Id="WorkingUser" ViewItem="WorkingUser" Index="1" RelativeSize="49.213483146067418" IsNewNode="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="StartTime" Index="2" RelativeSize="8.6330935251798557" Removed="True" />
+                <LayoutItem Id="FinishTime" Index="3" RelativeSize="8.6330935251798557" Removed="True" />
+                <LayoutItem Id="TaskGroups" Index="4" RelativeSize="62.589928057553955" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="TaskDefinitions_col2" RelativeSize="33.723653395784545" Caption="TaskDefinitions_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="CreatedUser" Index="0" RelativeSize="11.510791366906474" Removed="True" />
+                <LayoutItem Id="WorkingUser" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="TaskStatus" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="TaskDefinitions_ListView" AllowNew="False" Caption="Bütün Görevler">
+      <Columns>
+        <ColumnInfo Id="TaskDefinition" Caption="Görev Tanımı" />
+        <ColumnInfo Id="StartTime" SortIndex="0" SortOrder="Ascending" Caption="Başlangıç Zamanı" />
+        <ColumnInfo Id="FinishTime" Caption="Bitiş Zamanı" />
+        <ColumnInfo Id="TaskGroups" Caption="Görev Grubu" />
+        <ColumnInfo Id="TaskStatus" Caption="Görev Durumu" />
+        <ColumnInfo Id="WorkingUser" Index="5" Caption="Çalışan Kullanıcı" />
+        <ColumnInfo Id="CreatedUser" Index="6" AllowEdit="True" Caption="Oluşturan Kullanıcı" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="GorevAl" IsNewNode="True" />
+        <ActionLink ActionId="GorevOnayla" IsNewNode="True" />
+        <ActionLink ActionId="GorevTamamla" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="TaskDefinitions_ListView_AtanmamisGorevler" ClassName="deneme.Module.BusinessObjects.TaskDefinitions" Caption="Atanmamış Görevler" Criteria="[WorkingUser] Is Null" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="TaskDefinition" PropertyName="TaskDefinition" Width="70" Index="0" Caption="Görev Tanımı" IsNewNode="True" />
+        <ColumnInfo Id="StartTime" PropertyName="StartTime" Width="70" Index="1" SortIndex="0" SortOrder="Ascending" Caption="Başlangıç Zamanı" IsNewNode="True" />
+        <ColumnInfo Id="FinishTime" PropertyName="FinishTime" Width="70" Index="2" Caption="Bitiş Zamanı" IsNewNode="True" />
+        <ColumnInfo Id="TaskGroups" PropertyName="TaskGroups" Width="70" Index="3" Caption="Görev Grubu" IsNewNode="True" />
+        <ColumnInfo Id="TaskStatus" PropertyName="TaskStatus" Width="70" Index="4" Caption="Görev Durumu" IsNewNode="True" />
+        <ColumnInfo Id="WorkingUser" PropertyName="WorkingUser" Width="70" Index="5" Caption="Çalışan Kullanıcı" IsNewNode="True" />
+        <ColumnInfo Id="CreatedUser" PropertyName="CreatedUser" Width="70" Index="6" Caption="Oluşturan Kullanıcı" IsNewNode="True" />
+      </Columns>
+      <HiddenActions IsNewNode="True">
+        <ActionLink ActionId="GorevOnayla" IsNewNode="True" />
+        <ActionLink ActionId="GorevTamamla" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="TaskDefinitions_ListView_CreatedUser" ClassName="deneme.Module.BusinessObjects.TaskDefinitions" Criteria="[CreatedUser.Oid] = CurrentUserId()" Caption="Görev Oluştur" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="TaskDefinition" PropertyName="TaskDefinition" Width="70" Index="0" Caption="Görev Tanımı" IsNewNode="True" />
+        <ColumnInfo Id="StartTime" PropertyName="StartTime" Width="70" Index="1" SortIndex="0" SortOrder="Ascending" Caption="Başlangıç Zamanı" IsNewNode="True" />
+        <ColumnInfo Id="FinishTime" PropertyName="FinishTime" Width="70" Index="2" Caption="Bitiş Zamanı" IsNewNode="True" />
+        <ColumnInfo Id="TaskGroups" PropertyName="TaskGroups" Width="70" Index="3" Caption="Görev Grubu" IsNewNode="True" />
+        <ColumnInfo Id="TaskStatus" PropertyName="TaskStatus" Width="70" Index="4" Caption="Görev Durumu" IsNewNode="True" />
+        <ColumnInfo Id="WorkingUser" PropertyName="WorkingUser" Width="70" Index="5" Caption="Çalışan Kullanıcı" IsNewNode="True" />
+        <ColumnInfo Id="CreatedUser" PropertyName="CreatedUser" Width="70" Index="6" Caption="Oluşturan Kullanıcı" IsNewNode="True" />
+      </Columns>
+      <HiddenActions IsNewNode="True">
+        <ActionLink ActionId="GorevAl" IsNewNode="True" />
+        <ActionLink ActionId="GorevOnayla" IsNewNode="True" />
+        <ActionLink ActionId="GorevTamamla" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="TaskDefinitions_ListView_Görevlerim" ClassName="deneme.Module.BusinessObjects.TaskDefinitions" Criteria="[WorkingUser.Oid] = CurrentUserId()" Caption="Görevlerim" AllowNew="False" AllowDelete="False" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="TaskDefinition" PropertyName="TaskDefinition" Width="70" Index="0" Caption="Görev Tanımı" IsNewNode="True" />
+        <ColumnInfo Id="StartTime" PropertyName="StartTime" Width="70" Index="1" SortIndex="0" SortOrder="Ascending" Caption="Başlangıç Zamanı" IsNewNode="True" />
+        <ColumnInfo Id="FinishTime" PropertyName="FinishTime" Width="70" Index="2" Caption="Bitiş Zamanı" IsNewNode="True" />
+        <ColumnInfo Id="TaskGroups" PropertyName="TaskGroups" Width="70" Index="3" Caption="Görev Grubu" IsNewNode="True" />
+        <ColumnInfo Id="TaskStatus" PropertyName="TaskStatus" Width="70" Index="4" Caption="Görev Durumu" IsNewNode="True" />
+        <ColumnInfo Id="WorkingUser" PropertyName="WorkingUser" Width="70" Index="5" Caption="Çalışan Kullanıcı" IsNewNode="True" />
+        <ColumnInfo Id="CreatedUser" PropertyName="CreatedUser" Width="70" Index="6" Caption="Oluşturan Kullanıcı" IsNewNode="True" />
+      </Columns>
+      <HiddenActions IsNewNode="True">
+        <ActionLink ActionId="GorevAl" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="TaskDefinitions_LookupListView" AllowNew="True">
+      <Columns>
+        <ColumnInfo Id="TaskStatus" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <ListView Id="TaskGroups_ListView" Caption="Görev Grupları">
+      <Columns>
+        <ColumnInfo Id="GroupDefinition" Caption="Grup Adı" />
+      </Columns>
+    </ListView>
+    <ListView Id="TaskGroups_LookupListView" AllowNew="False" />
+    <ListView Id="Users_ListView" Caption="Kullanıcılar">
+      <Columns>
+        <ColumnInfo Id="UserName" Caption="Kullanıcı Adı" />
+        <ColumnInfo Id="ChangePasswordOnFirstLogon" Caption="İlk Girişte Şifre Değişimi" />
+        <ColumnInfo Id="IsActive" Caption="Aktif mi" />
+      </Columns>
+    </ListView>
+    <ListView Id="Users_LookupListView" AllowNew="False" />
+  </Views>
+</Application>
